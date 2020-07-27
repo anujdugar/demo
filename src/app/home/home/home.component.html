@@ -1,0 +1,90 @@
+<div class="row">
+  <ul>
+    Selecting multiple options vary in different operating systems and browsers:
+    <li>
+      For windows: Hold down the control (ctrl) button to select multiple
+      options
+    </li>
+    <li>
+      For Mac: Hold down the command button to select multiple options
+    </li>
+  </ul>
+</div>
+<div class="form-group row">
+  <div class="col-md-5">
+    <select
+      class="form-control"
+      [(ngModel)]="selectedToAdd"
+      multiple
+      name="myselecttsms2"
+    >
+      <option
+        *ngFor="let item of groupsArray"
+        style="
+          text-align: center;
+          border-radius: 2px;
+          background: #fff;
+          margin-bottom: 2px;
+          padding: 2px;
+        "
+        [ngValue]="item"
+        >{{ item.name }}</option
+      >
+    </select>
+  </div>
+  <div class="col-md-1" style="margin-top: 35px;">
+    <div class="row">
+      <div class="col-12" style="margin-left: 29px; margin-top: -24px;">
+        <button
+          (click)="assign()"
+          class="btn btn-primary"
+          style="
+            margin-bottom: 3px;
+            width: 39px;
+            height: 39px;
+            background: #24ca71;
+          "
+        >
+          <i class="fa fa-angle-double-right"></i>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="margin-left: 27px;">
+        <button
+          (click)="unassign()"
+          class="btn btn-primary"
+          style="
+            margin-bottom: 3px;
+            width: 39px;
+            height: 39px;
+            background: #24ca71;
+          "
+        >
+          <i class="fa fa-angle-double-left"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <select
+      class="form-control"
+      [(ngModel)]="selectedToRemove"
+      multiple
+      name="myselecttsms"
+    >
+      <option
+        *ngFor="let item of selectedItems"
+        style="
+          text-align: center;
+          border-radius: 2px;
+          background: #fff;
+          margin-bottom: 2px;
+          padding: 2px;
+        "
+        [ngValue]="item"
+        >{{ item.name }}</option
+      >
+    </select>
+  </div>
+</div>
